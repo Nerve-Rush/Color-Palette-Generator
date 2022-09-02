@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Finder</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid intro">
+        <div class="intro-text">
+            <h1><strong>Nwachi's Color Finder App</strong></h1>
+            <h3>Find out about the various colors that makes the picture in just one click</h3>
+        </div>
+    </div>
+    <div class="text-center">
+        {% if intro %}
+        <img class="image rounded mx-auto d-block" src="../{{ image }}" width="100%">
+        {% else %}
+        <img class="image rounded mx-auto d-block" src="{{ image }}" width="100%">
+        {% endif %}
+    </div>
+    <div class="tablediv">
+        <div class="row">
+            {% for color in colors %}
+            <div class="col">
+                <div style="background-color: #{{ hex_(color.rgb) }}" class="color"></div>
+                <div class="colorid">{{ colors.index(color) + 1 }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Color Code</th>
+            <th>Color Percentage</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for color in colors %}
+        <tr>
+            <th>{{ colors.index(color) }}</th>
+            <th>{{ color.rgb }}</th>
+            <th>{{ color.proportion }}</th>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <form method="POST" action="/">
+            <input width="10em" name="url" placeholder="Image URL or File Path">
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+<!--#536976-->
+<!--#292E49-->

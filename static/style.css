@@ -1,0 +1,30 @@
+
+.image {
+    width: 800px;
+}
+.intro {
+    background: linear-gradient(#536976, #292E49);
+    background-blend-mode: darken;
+    margin-bottom: 5em;
+    text-align: center;
+    color: white;
+}
+.intro h1 {
+    color: white;
+    font-size: 5em;
+    padding-bottom: 1em;
+}
+.intro-text {
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+.tablediv {
+    margin: 5em;
+}
+
+.color {
+    height: 100px;
+}
+.colorid {
+    margin-bottom: 1em;
+}
